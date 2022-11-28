@@ -190,15 +190,17 @@ $('document').ready(function () {
         $('.cake').fadeOut('fast').promise().done(function () {
             $('.message').fadeIn('slow');
         });
-        var i;
+
         function msgLoop(i) {
             $("p:nth-child(" + i + ")").fadeOut('slow').delay(1200).promise().done(function () {
                 i = i + 1;
                 $("p:nth-child(" + i + ")").fadeIn('slow').delay(1500);
-                if (i == 50) {
-                    $("p:nth-child(49)").fadeOut('slow').promise().done(function () {
+                if (i == 10) {
+                    $("p:nth-child(9)").fadeOut('slow').promise().done(function () {
                         $('.cake').fadeIn('fast');
                     });
+
+                    $('#egg').fadeIn('slow');
                 }
                 else {
                     msgLoop(i);
@@ -210,6 +212,14 @@ $('document').ready(function () {
 
         msgLoop(0);
 
+    });
+
+    $('#bulb_orange').click(function() {
+        location.href = 'http://heart.todyto.cn/heart3.html';
+    });
+
+    $('#flame').click(function() {
+        location.href = 'https://timeline.todyto.cn/';
     });
 });
 
